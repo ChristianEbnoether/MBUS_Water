@@ -9,8 +9,9 @@ get_water_data () {
     while [  $COUNTER -lt 4 ]; do
         #Get water data
         #zaehler=`/home/pi/libmbus/build/bin/mbus-serial-request-data -b 2400 /dev/ttyAMA0 1 | grep -A1 Volume | grep Value | grep -o '[0-9]\+'`
-        zaehler=`/usr/local/bin/mbus-serial-request-data -b 2400 /dev/ttyAMA0 1 | grep -A1 Volume | grep Value | grep -o '[0-9]\+'`
-
+        #zaehler=`/usr/local/bin/mbus-serial-request-data -b 2400 /dev/ttyAMA0 1 | grep -A1 Volume | grep Value | grep -o '[0-9]\+'`
+        zaehler=`/usr/local/bin/mbus-serial-request-data -b 2400 /dev/ttyUSB0 1 | grep -A1 Volume | grep Value | grep -o '[0-9]\+'`
+        
         if [[ $zaehler -le 0 ]];
                 then
                 echo "Retry getting data - received some invalid data from the read"
