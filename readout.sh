@@ -2,7 +2,7 @@
 
 #30 seconds seems to be ideal, any more frequent and the data
 sleeptime=10
-gpio write 25 1
+#gpio write 25 1
 
 get_water_data () {
     COUNTER=0
